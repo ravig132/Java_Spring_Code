@@ -1,0 +1,19 @@
+package in.gangwar;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class Main {
+    public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+
+
+        orderService order = context.getBean(orderService.class);
+
+        System.out.println("payment service not started yet");
+        order.placeOrder();
+
+
+    }
+
+}
