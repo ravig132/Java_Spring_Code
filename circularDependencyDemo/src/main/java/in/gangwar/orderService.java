@@ -9,15 +9,17 @@ public class orderService {
     @Autowired
     private paymentService payment ;
 
-//    orderService (paymentService payment){
-//        this.payment = payment ;
-//    }
+    orderService (paymentService payment){
+        this.payment = payment ;
+    }
 
     public void placeOrder(){
 
         payment.pay();
 
         System.out.println("Order placed");
+
+        getOrderDetails();
     }
 
     public void getOrderDetails(){
